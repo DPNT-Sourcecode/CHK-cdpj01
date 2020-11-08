@@ -17,14 +17,18 @@ public class SumSolutionTest {
     }
 
     @Test
-    public void compute_sum_1_1() {
-        assertThat(sum.compute(1, 1), equalTo(2));
+    public void compute_sums() {
+        assertSum(1, 1, 2);
+        assertSum(0, 0, 0);
+        assertSum(100, 0, 100);
+        assertSum(0, 100, 100);
+        assertSum(100, 100, 200);
+        assertSum(50, 1, 51);
     }
 
-    @Test
-    @Parameters
-    public void compute_sum_0_0() {
-
+    private void assertSum(int i, int i2, int i3) {
+        assertThat(sum.compute(i, i2), equalTo(i3));
     }
 }
+
 
