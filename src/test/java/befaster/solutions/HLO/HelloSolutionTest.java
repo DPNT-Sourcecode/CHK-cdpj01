@@ -12,8 +12,9 @@ public class HelloSolutionTest {
     public void saysHello() {
         HelloSolution subject = new HelloSolution();
         String greeting = subject.hello("doesn't matter yet");
-        assertThat(greeting, equalTo("Hello, world!"));
+        assertThat(greeting, equalTo("Hello, World!"));
     }
 
 }
+
 
