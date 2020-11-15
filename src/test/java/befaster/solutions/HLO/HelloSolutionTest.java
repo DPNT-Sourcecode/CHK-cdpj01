@@ -8,9 +8,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class HelloSolutionTest {
 
+    private HelloSolution subject = new HelloSolution();
+
     @Test
     public void saysHelloToJohn() {
-        HelloSolution subject = new HelloSolution();
         String friendName = "John";
 
         String greeting = subject.hello(friendName);
@@ -19,13 +20,13 @@ public class HelloSolutionTest {
 
     @Test
     public void saysHelloToMike() {
-        HelloSolution subject = new HelloSolution();
         String friendName = "Mike";
 
         String greeting = subject.hello(friendName);
         assertThat(greeting, equalTo("Hello, " + friendName + "!"));
     }
 }
+
 
 
 
