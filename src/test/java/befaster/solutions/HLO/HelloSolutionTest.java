@@ -26,7 +26,3 @@ public class HelloSolutionTest {
         assertThat(greeting, equalTo("Hello, " + friendName + "!"));
     }
 }
-
-
-
-
