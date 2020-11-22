@@ -56,7 +56,7 @@ public class CheckoutSolutionTest {
 
     @Test
     public void basket_with_illegal_characters() {
-        assertBasketCost("ZZZ", -1);
+        assertBasketCost("____", -1);
     }
 
     @Test
@@ -86,4 +86,5 @@ public class CheckoutSolutionTest {
         assertThat(result, equalTo(expectedCost));
     }
 }
+
 

@@ -21,6 +21,7 @@ public class CheckoutSolution {
                 new Offer("G", 20),
                 new Offer("HHHHHHHHHH", 80),
                 new Offer("HHHHH", 45),
+                new Offer("H", 10),
                 new Offer("I", 35),
                 new Offer("J", 60),
                 new Offer("KK", 150),
@@ -64,6 +65,7 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
 
