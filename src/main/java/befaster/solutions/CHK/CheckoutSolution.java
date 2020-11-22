@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CheckoutSolution {
+
+    public static final boolean LOGGING_ENABLED = false;
+
     public Integer checkout(String skus) {
 
         List<Offer> offers = Arrays.asList(
@@ -33,9 +36,9 @@ public class CheckoutSolution {
                 new Offer("O", 10),
                 new Offer("PPPPP", 200),
                 new Offer("P", 50),
-                new Offer("QQQ", 80),
                 new Offer("RRRQ", 150),
                 new Offer("R", 50),
+                new Offer("QQQ", 80),
                 new Offer("Q", 30),
                 new Offer("S", 30),
                 new Offer("T", 20),
@@ -50,20 +53,11 @@ public class CheckoutSolution {
                 new Offer("Z", 50)
         );
 
-//        PPPPPP 200 + 50 == 250
-//        RRRQ               150
-//        QQ                 60
-//        S                  30
-//        UUUU               120
-//        VVV                130
-
-
-
         Basket basket = new Basket(skus);
 
         for (Offer offer : offers) {
             while (basket.canApplyOffer(offer)) {
-                System.out.println("Applying offer: " + offer);
+                log(offer);
                 basket = basket.applyOffer(offer);
             }
         }
@@ -74,5 +68,12 @@ public class CheckoutSolution {
             return basket.valueSoFar;
         }
     }
+
+    private void log(Offer offer) {
+        if (LOGGING_ENABLED) {
+            System.out.println("Applying offer: " + offer);
+        }
+    }
 }
+
 
