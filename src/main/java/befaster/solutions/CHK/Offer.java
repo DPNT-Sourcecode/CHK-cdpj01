@@ -3,8 +3,6 @@ package befaster.solutions.CHK;
 import java.util.Map;
 
 public class Offer {
-
-
     final Map<Character, Long> items;
     public final int cost;
 
@@ -13,4 +11,5 @@ public class Offer {
         this.cost = cost;
     }
 }
+
 

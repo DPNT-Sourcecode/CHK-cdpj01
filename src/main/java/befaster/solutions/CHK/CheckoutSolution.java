@@ -28,9 +28,9 @@ public class CheckoutSolution {
         } else {
             return basket.valueSoFar;
         }
-
     }
 }
+
 
 
 
