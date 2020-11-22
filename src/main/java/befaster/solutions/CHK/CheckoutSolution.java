@@ -51,8 +51,8 @@ public class CheckoutSolution {
         );
 
 //        PPPPPP 200 + 50 == 250
-//        QQ                 60
 //        RRRQ               150
+//        QQ                 60
 //        S                  30
 //        UUUU               120
 //        VVV                130
@@ -63,6 +63,7 @@ public class CheckoutSolution {
 
         for (Offer offer : offers) {
             while (basket.canApplyOffer(offer)) {
+                System.out.println("Applying offer: " + offer);
                 basket = basket.applyOffer(offer);
             }
         }
@@ -74,9 +75,4 @@ public class CheckoutSolution {
         }
     }
 }
-
-
-
-
-
 
