@@ -6,9 +6,9 @@ public class CheckoutSolution {
         Basket basket = new Basket(skus);
 
         return basket.calculateCost();
-
     }
 }
+
 
 
 

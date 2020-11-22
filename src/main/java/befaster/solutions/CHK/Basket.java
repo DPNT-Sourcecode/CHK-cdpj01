@@ -6,9 +6,11 @@ import java.util.stream.Collectors;
 
 public class Basket {
     private final String skus;
+    private final int valueSoFar;
 
     public Basket(String skus) {
         this.skus = skus;
+        this.valueSoFar = 0;
     }
 
     public Integer calculateCost() {
@@ -72,4 +74,5 @@ public class Basket {
 
 
 }
+
 
