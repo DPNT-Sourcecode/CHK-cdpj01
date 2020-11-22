@@ -6,12 +6,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Basket {
-    private final String skus;
     private final int valueSoFar;
     private Map<Character, Long> skuFrequencies;
 
     public Basket(String skus, int valueSoFar) {
-        this.skus = skus;
         this.valueSoFar = valueSoFar;
 
         skuFrequencies = characterFrequencies(skus);
@@ -21,8 +19,9 @@ public class Basket {
         this(skus, 0);
     }
 
-    public Basket(HashMap<Character, Long> skuFrequencies) {
+    public Basket(HashMap<Character, Long> skuFrequencies, int valueSoFar) {
         this.skuFrequencies = skuFrequencies;
+        this.valueSoFar = valueSoFar;
     }
 
     public boolean canApplyOffer(Offer offer) {
@@ -44,7 +43,7 @@ public class Basket {
             newSkuFrequencies.put(sku, frequencyInBasket - frequencyInOffer);
         }
 
-        return new Basket(newSkuFrequencies);
+        return new Basket(newSkuFrequencies, this.valueSoFar + offer.cost);
     }
 
     public Integer calculateCost() {
@@ -95,7 +94,7 @@ public class Basket {
     }
 
     private int getFrequency(char sku) {
-        Map<Character, Long> frequencies = characterFrequencies(skus);
+        Map<Character, Long> frequencies = skuFrequencies;
 
         Long frequency = frequencies.get(sku);
         if (frequency != null) {
@@ -105,4 +104,5 @@ public class Basket {
         }
     }
 }
+
 
