@@ -18,7 +18,7 @@ public class CheckoutSolution {
 
     private boolean isLegalBasket(String skus) {
         long illegalCharacters = characterFrequencies(skus).keySet().stream()
-                .filter(this::isLegalSku)
+                .filter(c -> !isLegalSku(c))
                 .count();
         return illegalCharacters > 0;
     }
@@ -62,5 +62,6 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
 

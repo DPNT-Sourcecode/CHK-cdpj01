@@ -52,6 +52,11 @@ public class CheckoutSolutionTest {
         assertBasketCost("ZZZ", -1);
     }
 
+    @Test
+    public void empty_basket_is_legal_with_value_0() {
+        assertBasketCost("", 0);
+    }
+
     private void assertBasketCost(String ab, int i) {
         Integer result = new CheckoutSolution().checkout(ab);
         assertThat(result, equalTo(i));
@@ -67,5 +72,6 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+
 
 
