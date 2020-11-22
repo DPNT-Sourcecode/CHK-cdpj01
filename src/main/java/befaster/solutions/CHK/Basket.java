@@ -46,25 +46,6 @@ public class Basket {
         return new Basket(newSkuFrequencies, this.valueSoFar + offer.cost);
     }
 
-    public Integer calculateCost() {
-        if (!isLegalBasket()) {
-            return -1;
-        } else {
-            return computeCostFor('A', 50, 3, 130)
-                    + computeCostFor('B', 30, 2, 45)
-                    + computeCostFor('C', 20, 0, 0)
-                    + computeCostFor('D', 15, 0, 0);
-        }
-    }
-
-
-    private boolean isLegalBasket() {
-        long illegalCharacters = skuFrequencies.keySet().stream()
-                .filter(c -> !isLegalSku(c))
-                .count();
-        return illegalCharacters == 0;
-    }
-
     static Map<Character, Long> characterFrequencies(String skus) {
         return skus.chars()
                 .mapToObj(c -> (char) c)
@@ -75,42 +56,18 @@ public class Basket {
                 );
     }
 
-    private boolean isLegalSku(Character c) {
-        return c == 'A'
-                || c == 'B'
-                || c == 'C'
-                || c == 'D';
-    }
-
-    private int computeCostFor(char sku, int costPerItem, int offerQuantity, int amountPerOffer) {
-        int frequency = getFrequency(sku);
-
-        if (offerQuantity == 0) {
-            return frequency * costPerItem;
-        } else {
-            return (frequency / offerQuantity) * amountPerOffer
-                    + (frequency % offerQuantity) * costPerItem;
-        }
-    }
-
     private int getFrequency(char sku) {
-        Map<Character, Long> frequencies = skuFrequencies;
-
-        Long frequency = frequencies.get(sku);
-        if (frequency != null) {
-            return frequency.intValue();
-        } else {
-            return 0;
-        }
+        return skuFrequencies.getOrDefault(sku, 0L).intValue();
     }
 
     public boolean isEmpty() {
         long numberOfSkusWithNonZeroFrequency = skuFrequencies.keySet().stream()
                 .filter(sku -> skuFrequencies.get(sku) != 0)
                 .count();
-        return numberOfSkusWithNonZeroFrequency != 0;
+        return numberOfSkusWithNonZeroFrequency == 0;
     }
 }
+
 
 
 
