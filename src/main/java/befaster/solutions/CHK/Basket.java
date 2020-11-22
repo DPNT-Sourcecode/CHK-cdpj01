@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Basket {
-    private final int valueSoFar;
+    final int valueSoFar;
     private Map<Character, Long> skuFrequencies;
 
     public Basket(String skus, int valueSoFar) {
@@ -103,6 +103,14 @@ public class Basket {
             return 0;
         }
     }
+
+    public boolean isEmpty() {
+        long numberOfSkusWithNonZeroFrequency = skuFrequencies.keySet().stream()
+                .filter(sku -> skuFrequencies.get(sku) != 0)
+                .count();
+        return numberOfSkusWithNonZeroFrequency != 0;
+    }
 }
+
 
 

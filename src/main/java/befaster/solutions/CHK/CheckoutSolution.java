@@ -17,8 +17,20 @@ public class CheckoutSolution {
 
         Basket basket = new Basket(skus);
 
-        return basket.calculateCost();
+        for (Offer offer : offers) {
+            while (basket.canApplyOffer(offer)) {
+                basket = basket.applyOffer(offer);
+            }
+        }
+
+        if (!basket.isEmpty()) {
+            return -1;
+        } else {
+            return basket.valueSoFar;
+        }
+
     }
 }
+
 
 
