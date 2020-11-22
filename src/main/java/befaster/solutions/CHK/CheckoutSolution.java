@@ -15,7 +15,8 @@ public class CheckoutSolution {
                 new Offer("B", 30),
                 new Offer("C", 20),
                 new Offer("D", 15),
-                new Offer("E", 40)
+                new Offer("E", 40),
+                new Offer("F", 10)
         );
 
         Basket basket = new Basket(skus);
@@ -33,4 +34,5 @@ public class CheckoutSolution {
         }
     }
 }
+
 
