@@ -20,7 +20,7 @@ public class CheckoutSolution {
         long illegalCharacters = characterFrequencies(skus).keySet().stream()
                 .filter(c -> !isLegalSku(c))
                 .count();
-        return illegalCharacters > 0;
+        return illegalCharacters == 0;
     }
 
     private boolean isLegalSku(Character c) {
@@ -62,6 +62,7 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
 
 
