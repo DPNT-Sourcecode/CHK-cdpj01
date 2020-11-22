@@ -2,11 +2,8 @@ package befaster.solutions.CHK;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.*;
 
 
 public class CheckoutSolutionTest {
@@ -73,4 +70,5 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+
 
