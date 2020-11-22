@@ -19,12 +19,8 @@ public class CheckoutSolution {
         if (offerQuantity == 0) {
             return frequency * costPerItem;
         } else {
-            int numOfferChunks = frequency / offerQuantity;
-            int actualOfferAmount = numOfferChunks * amountPerOffer;
-
-            int nonOfferAmount = frequency % offerQuantity;
-
-            return actualOfferAmount + nonOfferAmount * costPerItem;
+            return (frequency / offerQuantity) * amountPerOffer
+                    + (frequency % offerQuantity) * costPerItem;
         }
     }
 
@@ -49,6 +45,7 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
 
 

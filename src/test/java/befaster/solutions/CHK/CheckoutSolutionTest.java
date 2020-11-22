@@ -28,8 +28,13 @@ public class CheckoutSolutionTest {
     }
 
     @Test
-    public void basket_with_one_offer() {
+    public void basket_with_one_offer_for_A() {
         assertBasketCost("AAA", 130);
+    }
+
+    @Test
+    public void basket_with_mix_of_offers_and_non_offers() {
+
     }
 
     private void assertBasketCost(String ab, int i) {
@@ -47,5 +52,6 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+
 
 
