@@ -55,6 +55,7 @@ public class CheckoutSolutionTest {
     @Test
     public void empty_basket_is_legal_with_value_0() {
         assertBasketCost("", 0);
+
     }
 
     private void assertBasketCost(String skus, int expectedCost) {
@@ -72,3 +73,4 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+

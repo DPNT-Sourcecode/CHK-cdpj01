@@ -1,11 +1,24 @@
 package befaster.solutions.CHK;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+
+        List<Offer> offers = Arrays.asList(
+                new Offer("AAA", 130),
+                new Offer("BB", 45),
+                new Offer("A", 50),
+                new Offer("B", 30),
+                new Offer("C", 20),
+                new Offer("D", 15)
+        );
 
         Basket basket = new Basket(skus);
 
         return basket.calculateCost();
     }
 }
+
 
