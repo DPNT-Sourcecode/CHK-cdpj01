@@ -6,15 +6,14 @@ import java.util.stream.Collectors;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-
         if (!isLegalBasket(skus)) {
             return -1;
+        } else {
+            return computeCostFor(skus, 'A', 50, 3, 130)
+                    + computeCostFor(skus, 'B', 30, 2, 45)
+                    + computeCostFor(skus, 'C', 20, 0, 0)
+                    + computeCostFor(skus, 'D', 15, 0, 0);
         }
-
-        return computeCostFor(skus, 'A', 50, 3, 130)
-                        + computeCostFor(skus, 'B', 30, 2, 45)
-                        + computeCostFor(skus, 'C', 20, 0, 0)
-                        + computeCostFor(skus, 'D', 15, 0, 0);
     }
 
     private boolean isLegalBasket(String skus) {
@@ -53,7 +52,7 @@ public class CheckoutSolution {
         }
     }
 
-    /* package */ static Map<Character, Long> characterFrequencies(String skus) {
+    private static Map<Character, Long> characterFrequencies(String skus) {
         return skus.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(
@@ -63,4 +62,5 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
