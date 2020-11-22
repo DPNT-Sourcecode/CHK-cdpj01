@@ -4,7 +4,11 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+
+        skus.
+
         return 50 * skus.length();
     }
 }
+
 

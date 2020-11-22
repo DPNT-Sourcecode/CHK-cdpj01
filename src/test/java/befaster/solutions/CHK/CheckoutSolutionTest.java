@@ -21,7 +21,13 @@ public class CheckoutSolutionTest {
         assertThat(result, equalTo(100));
     }
 
-//    +------+-------+----------------+
+    @Test
+    public void computes_cost_of_basket_with_different_items_no_offers() {
+        Integer result = new CheckoutSolution().checkout("AB");
+        assertThat(result, equalTo(80));
+    }
+
+    //    +------+-------+----------------+
 //    | Item | Price | Special offers |
 //    +------+-------+----------------+
 //    | A    | 50    | 3A for 130     |
@@ -31,5 +37,6 @@ public class CheckoutSolutionTest {
 //    +------+-------+----------------+
 
 }
+
 
 
