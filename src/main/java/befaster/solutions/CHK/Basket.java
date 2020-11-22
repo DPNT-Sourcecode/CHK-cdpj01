@@ -67,7 +67,3 @@ public class Basket {
         return numberOfSkusWithNonZeroFrequency == 0;
     }
 }
-
-
-
-
