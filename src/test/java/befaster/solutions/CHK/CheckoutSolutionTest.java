@@ -47,6 +47,11 @@ public class CheckoutSolutionTest {
         assertBasketCost("CC", 20 * 2);
     }
 
+    @Test
+    public void basket_with_illegal_characters() {
+        assertBasketCost("ZZZ", -1);
+    }
+
     private void assertBasketCost(String ab, int i) {
         Integer result = new CheckoutSolution().checkout(ab);
         assertThat(result, equalTo(i));
@@ -62,4 +67,5 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+
 

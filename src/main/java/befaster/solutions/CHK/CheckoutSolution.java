@@ -7,10 +7,28 @@ import java.util.stream.Collectors;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
+        if (!isLegalBasket(skus)) {
+            return -1;
+        }
+
         return computeCostFor(skus, 'A', 50, 3, 130)
                         + computeCostFor(skus, 'B', 30, 2, 45)
                         + computeCostFor(skus, 'C', 20, 0, 0)
                         + computeCostFor(skus, 'D', 15, 0, 0);
+    }
+
+    private boolean isLegalBasket(String skus) {
+        long illegalCharacters = characterFrequencies(skus).keySet().stream()
+                .filter(this::isLegalSku)
+                .count();
+        return illegalCharacters > 0;
+    }
+
+    private boolean isLegalSku(Character c) {
+        return c == 'A'
+                || c == 'B'
+                || c == 'C'
+                || c == 'D';
     }
 
     private int computeCostFor(String skus, char sku, int costPerItem, int offerQuantity, int amountPerOffer) {
@@ -45,3 +63,4 @@ public class CheckoutSolution {
                 );
     }
 }
+
