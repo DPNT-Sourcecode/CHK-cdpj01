@@ -7,12 +7,10 @@ import java.util.stream.Collectors;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
-        int total = (int) ((frequencies.get('A') * 50)
-                        + frequencies.get('B') * 30
-                        + frequencies.get('C') * 20
-                        + frequencies.get('D') * 15);
-
-        return 50 * skus.length();
+        return (getFrequency('A', skus) * 50)
+                        + getFrequency('B', skus) * 30
+                        + getFrequency('C', skus) * 20
+                        + getFrequency('D', skus) * 15;
     }
 
     private int getFrequency(char sku, String skus) {
@@ -36,5 +34,6 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
 

@@ -39,16 +39,5 @@ public class CheckoutSolutionTest {
 //    | D    | 15    |                |
 //    +------+-------+----------------+
 
-    // TODO move me maybe
-    @Test
-    public void calculates_sane_frequences() {
-        Map<Character, Long> expectedFrequencies = new HashMap<>();
-        expectedFrequencies.put('A', 4L);
-        expectedFrequencies.put('B', 2L);
-        expectedFrequencies.put('C', 1L);
-
-        Map<Character, Long> actualFrequencies = CheckoutSolution.characterFrequencies("AAAABBC");
-
-        assertThat(actualFrequencies, equalTo(expectedFrequencies));
-    }
 }
+
