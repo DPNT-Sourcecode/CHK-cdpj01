@@ -1,5 +1,6 @@
 package befaster.solutions.CHK;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -20,6 +21,10 @@ public class Basket {
         this(skus, 0);
     }
 
+    public Basket(HashMap<Character, Long> skuFrequencies) {
+        this.skuFrequencies = skuFrequencies;
+    }
+
     public boolean canApplyOffer(Offer offer) {
         for (Character character : offer.items.keySet()) {
             if (getFrequency(character) < offer.items.get(character)) {
@@ -32,10 +37,14 @@ public class Basket {
 
     public Basket applyOffer(Offer offer) {
         // precondition: must be able to apply this offer or this will blow up
-        skuFrequencies
-        for (Character character : offer.items.keySet()) {
-
+        HashMap<Character, Long> newSkuFrequencies = new HashMap<>(skuFrequencies);
+        for (Character sku : offer.items.keySet()) {
+            long frequencyInOffer = offer.items.get(sku);
+            long frequencyInBasket = newSkuFrequencies.get(sku);
+            newSkuFrequencies.put(sku, frequencyInBasket - frequencyInOffer);
         }
+
+        return new Basket(newSkuFrequencies);
     }
 
     public Integer calculateCost() {
@@ -96,3 +105,4 @@ public class Basket {
         }
     }
 }
+
