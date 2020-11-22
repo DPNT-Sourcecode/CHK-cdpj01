@@ -50,6 +50,15 @@ public class CheckoutSolution {
                 new Offer("Z", 50)
         );
 
+//        PPPPPP 200 + 50 == 250
+//        QQ                 60
+//        RRRQ               150
+//        S                  30
+//        UUUU               120
+//        VVV                130
+
+
+
         Basket basket = new Basket(skus);
 
         for (Offer offer : offers) {
@@ -65,6 +74,7 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
 
