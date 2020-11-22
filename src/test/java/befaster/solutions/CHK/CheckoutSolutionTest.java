@@ -34,7 +34,17 @@ public class CheckoutSolutionTest {
 
     @Test
     public void basket_with_mix_of_offers_and_non_offers() {
+        assertBasketCost("AAAB", 130 + 30);
+    }
 
+    @Test
+    public void basket_with_two_instances_of_an_offer() {
+        assertBasketCost("AAAAAA", 130 * 2);
+    }
+
+    @Test
+    public void basket_with_multiple_instances_of_product_with_no_offer() {
+        assertBasketCost("CC", 20 * 2);
     }
 
     private void assertBasketCost(String ab, int i) {
@@ -52,3 +62,4 @@ public class CheckoutSolutionTest {
     //    +------+-------+----------------+
 
 }
+
