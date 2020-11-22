@@ -9,8 +9,8 @@ public class CheckoutSolution {
         return 50 * skus.length();
     }
 
-    /* package */ Map<Character, Long> characterFrequencies(String skus) {
-        Map<Character, Long> collect = skus.chars()
+    /* package */ static Map<Character, Long> characterFrequencies(String skus) {
+        return skus.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(
                                 Function.identity(),
@@ -18,11 +18,4 @@ public class CheckoutSolution {
                         )
                 );
     }
-
 }
-
-
-
-
-
-
