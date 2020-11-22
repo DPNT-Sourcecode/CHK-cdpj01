@@ -17,6 +17,21 @@ public class Basket {
         this(skus, 0);
     }
 
+    public boolean canApplyOffer(Offer offer) {
+        for (Character character : offer.items.keySet()) {
+            if (getFrequency(character) < offer.items.get(character)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public Basket applyOffer(Offer offer) {
+        // precondition: must be able to apply this offer or this will blow up
+        
+    }
+
     public Integer calculateCost() {
         if (!isLegalBasket()) {
             return -1;
@@ -36,7 +51,7 @@ public class Basket {
         return illegalCharacters == 0;
     }
 
-    private static Map<Character, Long> characterFrequencies(String skus) {
+    static Map<Character, Long> characterFrequencies(String skus) {
         return skus.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(
@@ -64,7 +79,7 @@ public class Basket {
         }
     }
 
-    private int getFrequency(char sku, String skus) {
+    private int getFrequency(char sku) {
         Map<Character, Long> frequencies = characterFrequencies(skus);
 
         Long frequency = frequencies.get(sku);
@@ -74,10 +89,8 @@ public class Basket {
             return 0;
         }
     }
-
-
-
 }
+
 
 
 
