@@ -16,6 +16,7 @@ public class CheckoutSolution {
                 new Offer("C", 20),
                 new Offer("D", 15),
                 new Offer("E", 40),
+                new Offer("FFF", 20),
                 new Offer("F", 10)
         );
 
@@ -34,5 +35,6 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
