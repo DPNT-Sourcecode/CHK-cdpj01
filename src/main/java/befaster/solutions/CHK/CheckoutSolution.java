@@ -7,10 +7,15 @@ import java.util.stream.Collectors;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
-        return (getFrequency('A', skus) * 50)
-                        + getFrequency('B', skus) * 30
-                        + getFrequency('C', skus) * 20
-                        + getFrequency('D', skus) * 15;
+        return computeCostFor(skus, 'A', 50)
+                        + computeCostFor(skus, 'B', 30)
+                        + computeCostFor(skus, 'C', 20)
+                        + computeCostFor(skus, 'D', 15);
+    }
+
+    private int computeCostFor(String skus, char sku, int freq) {
+        
+        return getFrequency(sku, skus) * freq;
     }
 
     private int getFrequency(char sku, String skus) {
@@ -34,6 +39,7 @@ public class CheckoutSolution {
                 );
     }
 }
+
 
 
 
