@@ -1,14 +1,21 @@
 package befaster.solutions.CHK;
 
-import befaster.runner.SolutionNotImplementedException;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
-        skus.
+        List<Character> collect = skus.chars()
+                .mapToObj(c -> (char) c)
+                .collect(toList());
+        
 
         return 50 * skus.length();
     }
 }
+
 
 
