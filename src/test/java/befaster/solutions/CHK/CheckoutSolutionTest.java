@@ -30,13 +30,23 @@ public class CheckoutSolutionTest {
     }
 
     @Test
+    public void offer_5A_for_200() {
+        assertBasketCost("AAAAA", 200);
+    }
+
+    @Test
     public void basket_with_mix_of_offers_and_non_offers() {
         assertBasketCost("AAAB", 130 + 30);
     }
 
     @Test
+    public void buy_2E_get_one_B_for_free() {
+        assertBasketCost("EEB", 80);
+    }
+
+    @Test
     public void basket_with_two_instances_of_an_offer() {
-        assertBasketCost("AAAAAA", 130 * 2);
+        assertBasketCost("AAAAAAAAAA", 200 * 2);
     }
 
     @Test
@@ -59,16 +69,7 @@ public class CheckoutSolutionTest {
         Integer result = new CheckoutSolution().checkout(skus);
         assertThat(result, equalTo(expectedCost));
     }
-
-    //    +------+-------+----------------+
-    //    | Item | Price | Special offers |
-    //    +------+-------+----------------+
-    //    | A    | 50    | 3A for 130     |
-    //    | B    | 30    | 2B for 45      |
-    //    | C    | 20    |                |
-    //    | D    | 15    |                |
-    //    +------+-------+----------------+
-
 }
+
 
 

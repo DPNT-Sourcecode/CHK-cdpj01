@@ -7,7 +7,9 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
 
         List<Offer> offers = Arrays.asList(
+                new Offer("AAAAA", 200),
                 new Offer("AAA", 130),
+                new Offer("EEB", 80),
                 new Offer("BB", 45),
                 new Offer("A", 50),
                 new Offer("B", 30),
@@ -30,6 +32,7 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
 
