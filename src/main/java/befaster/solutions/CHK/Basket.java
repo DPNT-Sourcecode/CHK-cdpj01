@@ -7,10 +7,13 @@ import java.util.stream.Collectors;
 public class Basket {
     private final String skus;
     private final int valueSoFar;
+    private Map<Character, Long> skuFrequencies;
 
     public Basket(String skus, int valueSoFar) {
         this.skus = skus;
         this.valueSoFar = valueSoFar;
+
+        skuFrequencies = characterFrequencies(skus);
     }
 
     public Basket(String skus) {
@@ -29,23 +32,26 @@ public class Basket {
 
     public Basket applyOffer(Offer offer) {
         // precondition: must be able to apply this offer or this will blow up
-        
+        skuFrequencies
+        for (Character character : offer.items.keySet()) {
+
+        }
     }
 
     public Integer calculateCost() {
         if (!isLegalBasket()) {
             return -1;
         } else {
-            return computeCostFor(skus, 'A', 50, 3, 130)
-                    + computeCostFor(skus, 'B', 30, 2, 45)
-                    + computeCostFor(skus, 'C', 20, 0, 0)
-                    + computeCostFor(skus, 'D', 15, 0, 0);
+            return computeCostFor('A', 50, 3, 130)
+                    + computeCostFor('B', 30, 2, 45)
+                    + computeCostFor('C', 20, 0, 0)
+                    + computeCostFor('D', 15, 0, 0);
         }
     }
 
 
     private boolean isLegalBasket() {
-        long illegalCharacters = characterFrequencies(skus).keySet().stream()
+        long illegalCharacters = skuFrequencies.keySet().stream()
                 .filter(c -> !isLegalSku(c))
                 .count();
         return illegalCharacters == 0;
@@ -68,8 +74,8 @@ public class Basket {
                 || c == 'D';
     }
 
-    private int computeCostFor(String skus, char sku, int costPerItem, int offerQuantity, int amountPerOffer) {
-        int frequency = getFrequency(sku, skus);
+    private int computeCostFor(char sku, int costPerItem, int offerQuantity, int amountPerOffer) {
+        int frequency = getFrequency(sku);
 
         if (offerQuantity == 0) {
             return frequency * costPerItem;
@@ -90,7 +96,3 @@ public class Basket {
         }
     }
 }
-
-
-
-
