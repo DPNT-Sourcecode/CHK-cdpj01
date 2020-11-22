@@ -8,9 +8,13 @@ public class Basket {
     private final String skus;
     private final int valueSoFar;
 
-    public Basket(String skus) {
+    public Basket(String skus, int valueSoFar) {
         this.skus = skus;
-        this.valueSoFar = 0;
+        this.valueSoFar = valueSoFar;
+    }
+
+    public Basket(String skus) {
+        this(skus, 0);
     }
 
     public Integer calculateCost() {
@@ -74,5 +78,6 @@ public class Basket {
 
 
 }
+
 
 
