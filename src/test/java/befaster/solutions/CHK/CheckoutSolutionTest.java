@@ -5,9 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-
 public class CheckoutSolutionTest {
-
 
     @Test
     public void basket_with_single_A_costs_50() {

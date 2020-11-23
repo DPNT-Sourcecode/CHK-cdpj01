@@ -21,28 +21,28 @@ public class OffersBuilder {
     }
 
     OffersBuilder complexOffer(String skus, int numberPurchasedAtOnce, int price) {
-
-        Set<Character> skuSet = skus.chars()
-                .mapToObj(c -> (char) c)
-                .collect(Collectors.toSet());
-
-        List<String> skuCombinations = combinations(skuSet, numberPurchasedAtOnce);
+        List<String> skuCombinations = combinations(skus, numberPurchasedAtOnce);
 
         return this;
     }
 
-    private Set<String> combinations(String skus, int num) {
+    static List<String> combinations(String skus, int num) {
         if (num == 0) {
-            return Collections.emptySet();
+            return Collections.emptyList();
         } else {
-            Set<Character> accumulator = new HashSet<>();
-            for (char sku : skus) {
+            List<String> accumulator = new ArrayList<>();
+            for (int i = 0; i < skus.length(); i++) {
+                char sku = skus.charAt(i);
+
                 String remainingSkus = skus.replace(Character.toString(sku), "");
 
-                Set<String> combinations = combinations(remainingSkus, num - 1);
-                List<String> ston = combinations.stream().map(s -> s + sku).collect(Collectors.toList());
-                accumulator.addAll(ston);
+                List<String> combinations = combinations(remainingSkus, num - 1);
+                List<String> combinationsPlusThisSku = combinations.stream().map(s -> s + sku).collect(Collectors.toList());
+
+                accumulator.addAll(combinationsPlusThisSku);
             }
+
+            return accumulator;
         }
 
     }
