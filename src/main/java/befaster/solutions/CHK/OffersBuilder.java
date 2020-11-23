@@ -23,6 +23,10 @@ public class OffersBuilder {
     OffersBuilder complexOffer(String skus, int numberPurchasedAtOnce, int price) {
         List<String> skuCombinations = combinations(skus, numberPurchasedAtOnce);
 
+        skuCombinations.stream()
+                .map(s -> new Offer(s, price))
+                .forEach(o -> offers.add(o));
+
         return this;
     }
 
@@ -47,5 +51,3 @@ public class OffersBuilder {
 
     }
 }
-
-
