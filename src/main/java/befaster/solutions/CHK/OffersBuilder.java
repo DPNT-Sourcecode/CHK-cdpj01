@@ -28,7 +28,7 @@ public class OffersBuilder {
 
     static List<String> combinations(String skus, int num) {
         if (num == 0) {
-            return Collections.emptyList();
+            return Collections.singletonList("");
         } else {
             List<String> accumulator = new ArrayList<>();
             for (int i = 0; i < skus.length(); i++) {
