@@ -91,14 +91,24 @@ public class CheckoutSolutionTest {
         assertBasketCost("K", 70);
     }
 
-//    @Test
-//    public void buy_2K_for_120() {
-//        assertBasketCost("KK", 120);
-//    }
+    @Test
+    public void buy_2K_for_120() {
+        assertBasketCost("KK", 120);
+    }
+
+    @Test
+    public void buy_single_product_out_of_S_T_X_Z() {
+        assertBasketCost("S", 20);
+        assertBasketCost("T", 20);
+        assertBasketCost("X", 17);
+        assertBasketCost("Y", 20);
+        assertBasketCost("Z", 21);
+    }
 
     private void assertBasketCost(String skus, int expectedCost) {
         Integer result = new CheckoutSolution().checkout(skus);
         assertThat(result, equalTo(expectedCost));
     }
 }
+
 

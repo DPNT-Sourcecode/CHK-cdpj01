@@ -27,8 +27,8 @@ public class CheckoutSolution {
                 new Offer("H", 10),
                 new Offer("I", 35),
                 new Offer("J", 60),
-                new Offer("KK", 150),
-                new Offer("K", 80),
+                new Offer("KK", 120),
+                new Offer("K", 70),
                 new Offer("L", 90),
                 new Offer("NNNM", 120),
                 new Offer("N", 40),
@@ -75,4 +75,5 @@ public class CheckoutSolution {
         }
     }
 }
+
 
