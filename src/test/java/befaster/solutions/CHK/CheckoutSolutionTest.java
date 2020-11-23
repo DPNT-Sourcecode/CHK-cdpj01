@@ -60,11 +60,6 @@ public class CheckoutSolutionTest {
     }
 
     @Test
-    public void PPPPQRUVPQRUVPQRUVSU() {
-        assertBasketCost("PPPPQRUVPQRUVPQRUVSU", 740);
-    }
-
-    @Test
     public void empty_basket_is_legal_with_value_0() {
         assertBasketCost("", 0);
     }
@@ -107,8 +102,9 @@ public class CheckoutSolutionTest {
 
     private void assertBasketCost(String skus, int expectedCost) {
         Integer result = new CheckoutSolution().checkout(skus);
-        assertThat(result, equalTo(expectedCost));
+        assertThat(skus, result, equalTo(expectedCost));
     }
 }
+
 
 

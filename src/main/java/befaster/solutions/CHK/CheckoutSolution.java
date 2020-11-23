@@ -40,7 +40,7 @@ public class CheckoutSolution {
                 new Offer("R", 50),
                 new Offer("QQQ", 80),
                 new Offer("Q", 30),
-                new Offer("S", 30),
+                new Offer("S", 20),
                 new Offer("T", 20),
                 new Offer("UUUU", 120),
                 new Offer("U", 40),
@@ -48,9 +48,9 @@ public class CheckoutSolution {
                 new Offer("VV", 90),
                 new Offer("V", 50),
                 new Offer("W", 20),
-                new Offer("X", 90),
-                new Offer("Y", 10),
-                new Offer("Z", 50)
+                new Offer("X", 17),
+                new Offer("Y", 20),
+                new Offer("Z", 21)
         );
 
         Basket basket = new Basket(skus);
@@ -75,5 +75,6 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
