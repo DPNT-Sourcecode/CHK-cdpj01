@@ -33,8 +33,3 @@ public class OffersBuilder {
         return this;
     }
 }
-
-
-
-
-

@@ -110,7 +110,3 @@ public class CheckoutSolutionTest {
         assertThat(skus, result, equalTo(expectedCost));
     }
 }
-
-
-
-
