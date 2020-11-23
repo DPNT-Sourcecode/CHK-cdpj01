@@ -38,7 +38,7 @@ public class OffersBuilder {
             for (int i = 0; i < skus.length(); i++) {
                 char sku = skus.charAt(i);
 
-                String remainingSkus = skus.replace(Character.toString(sku), "");
+                String remainingSkus = skus;
 
                 List<String> combinations = combinations(remainingSkus, num - 1);
                 List<String> combinationsPlusThisSku = combinations.stream().map(s -> s + sku).collect(Collectors.toList());
@@ -50,4 +50,5 @@ public class OffersBuilder {
         }
     }
 }
+
 
