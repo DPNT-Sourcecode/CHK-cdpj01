@@ -1,8 +1,8 @@
 package befaster.solutions.CHK;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import com.google.common.collect.Sets;
+
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -26,10 +26,27 @@ public class OffersBuilder {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.toSet());
 
-        
-
-
+        List<String> skuCombinations = combinations(skuSet, numberPurchasedAtOnce);
 
         return this;
     }
+
+    private Set<String> combinations(String skus, int num) {
+        if (num == 0) {
+            return Collections.emptySet();
+        } else {
+            Set<Character> accumulator = new HashSet<>();
+            for (char sku : skuSet) {
+//                Set<Character> singleton = Collections.singleton(sku);
+//                Sets.SetView<Character> remainingSkus = Sets.difference(skuSet, singleton);
+                String remainingSkus = skus.repl
+
+                Set<String> combinations = combinations(remainingSkus, num - 1);
+                List<String> ston = combinations.stream().map(s -> s + sku).collect(Collectors.toList());
+                accumulator.addAll(ston);
+            }
+        }
+
+    }
 }
+
