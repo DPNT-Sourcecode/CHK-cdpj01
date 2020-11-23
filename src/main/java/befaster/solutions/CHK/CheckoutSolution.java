@@ -38,6 +38,7 @@ public class CheckoutSolution {
                 .offer("R", 50)
                 .offer("QQQ", 80)
                 .offer("Q", 30)
+                .complexOffer("STXYZ", 3, 45)
                 .offer("S", 20)
                 .offer("T", 20)
                 .offer("UUUU", 120)
@@ -73,4 +74,5 @@ public class CheckoutSolution {
         }
     }
 }
+
 

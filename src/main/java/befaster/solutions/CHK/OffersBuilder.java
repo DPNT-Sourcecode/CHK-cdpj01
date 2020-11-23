@@ -48,6 +48,6 @@ public class OffersBuilder {
 
             return accumulator;
         }
-
     }
 }
+
