@@ -36,10 +36,8 @@ public class OffersBuilder {
             return Collections.emptySet();
         } else {
             Set<Character> accumulator = new HashSet<>();
-            for (char sku : skuSet) {
-//                Set<Character> singleton = Collections.singleton(sku);
-//                Sets.SetView<Character> remainingSkus = Sets.difference(skuSet, singleton);
-                String remainingSkus = skus.repl
+            for (char sku : skus) {
+                String remainingSkus = skus.replace(Character.toString(sku), "");
 
                 Set<String> combinations = combinations(remainingSkus, num - 1);
                 List<String> ston = combinations.stream().map(s -> s + sku).collect(Collectors.toList());
@@ -49,4 +47,5 @@ public class OffersBuilder {
 
     }
 }
+
 
