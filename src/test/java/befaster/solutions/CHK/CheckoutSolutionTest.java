@@ -100,11 +100,17 @@ public class CheckoutSolutionTest {
         assertBasketCost("Z", 21);
     }
 
+    @Test
+    public void buy_any_3_of_S_T_X_Y_Z_for_45() {
+        assertBasketCost("STX", 21);
+    }
+
     private void assertBasketCost(String skus, int expectedCost) {
         Integer result = new CheckoutSolution().checkout(skus);
         assertThat(skus, result, equalTo(expectedCost));
     }
 }
+
 
 
 

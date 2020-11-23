@@ -26,12 +26,14 @@ public class OffersBuilder {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.toSet());
 
-        skuSet.minus
+        
+
 
 
         return this;
     }
 }
+
 
 
 
