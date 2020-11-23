@@ -7,7 +7,7 @@ public class OffersBuilder {
 
     private List<Offer> offers = new ArrayList<>();
 
-    public List<Offer> build() {
+    List<Offer> build() {
         return offers;
     }
 
@@ -17,5 +17,6 @@ public class OffersBuilder {
         return this;
     }
 }
+
 
 

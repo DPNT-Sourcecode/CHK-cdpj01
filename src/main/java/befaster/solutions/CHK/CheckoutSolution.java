@@ -49,7 +49,6 @@ public class CheckoutSolution {
                 .offer("X", 17)
                 .offer("Y", 20)
                 .offer("Z", 21)
-
                 .build();
 
         Basket basket = new Basket(skus);
@@ -74,6 +73,7 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
 
