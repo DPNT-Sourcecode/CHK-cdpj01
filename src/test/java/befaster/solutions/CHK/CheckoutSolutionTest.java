@@ -106,13 +106,8 @@ public class CheckoutSolutionTest {
     @Test
     public void complex_offer_is_good_for_repeated_instances_of_same_product() {
         assertBasketCost("SSS", 45);
-        assertBasketCost("SSSZ", 45);
+        assertBasketCost("SSSZ", 65);
         assertBasketCost("ZZZ", 45);
-
-
-        //  - {"method":"checkout","params":["SSS"],"id":"CHK_R5_141"}, expected: 45, got: 60
-        // - {"method":"checkout","params":["SSSZ"],"id":"CHK_R5_142"}, expected: 65, got: 81
-        // - {"method":"checkout","params":["ZZZ"],"id":"CHK_R5_143"}, expected: 45, got: 63
     }
 
     private void assertBasketCost(String skus, int expectedCost) {
@@ -120,5 +115,6 @@ public class CheckoutSolutionTest {
         assertThat(skus, result, equalTo(expectedCost));
     }
 }
+
 
 

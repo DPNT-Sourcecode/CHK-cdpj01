@@ -21,13 +21,16 @@ public class OffersBuilderTest {
     @Test
     public void any_2_from_list_of_2() {
         List<String> ab = OffersBuilder.combinations("AB", 2);
-        assertThat(ab, containsInAnyOrder("AB", "BA"));
+        assertThat(ab, containsInAnyOrder("AA", "AB", "BA", "BB"));
     }
 
     @Test
     public void any_2_from_list_of_3() {
         List<String> ab = OffersBuilder.combinations("ABC", 2);
-        assertThat(ab, containsInAnyOrder("AB", "AC", "BA", "BC", "CA", "CB"));
+        assertThat(ab, containsInAnyOrder(
+                "AA", "AB", "AC",
+                "BA", "BB", "BC",
+                "CA", "CB", "CC"));
     }
 
     @Test
