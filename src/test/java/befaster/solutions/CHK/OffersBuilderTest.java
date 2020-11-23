@@ -29,4 +29,11 @@ public class OffersBuilderTest {
         List<String> ab = OffersBuilder.combinations("ABC", 2);
         assertThat(ab, containsInAnyOrder("AB", "AC", "BA", "BC", "CA", "CB"));
     }
+
+    @Test
+    public void STXYZ() {
+        List<String> ab = OffersBuilder.combinations("STXYZ", 3);
+        System.out.println(ab);
+    }
+
 }
